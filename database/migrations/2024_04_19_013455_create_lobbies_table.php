@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('lobbies', function (Blueprint $table) {
             $table->id();
-            $table->varchar('place');
+            $table->string('place');
             $table->time('start_time');
             $table->time('end_time');
             $table->date('date');

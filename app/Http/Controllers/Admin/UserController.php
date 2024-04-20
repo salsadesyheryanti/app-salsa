@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['permission:users.index|users.create|users.edit|users.delete']);
+        // $this->middleware(['permission:users.index|users.create|users.edit|users.delete']);
     }
 
     /**
@@ -32,7 +32,7 @@ class UserController extends Controller
         $users = User::latest()->when(request()->q, function($users) {
             $users = $users->where('name', 'like', '%'. request()->q . '%');
         })->get();
-
+        dd($user);
         return view('admin.user.index', compact('users'));
     }
 

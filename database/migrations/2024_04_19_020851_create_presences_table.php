@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->time('time');
             $table->date('date');
-            $table->varchar('image');
-            $table->int('user_id')->unsigned()->nullable();
-            $table->int('lobby_id')->unsigned()->nullable();
+            $table->text('image');
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->bigInteger('lobby_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }
